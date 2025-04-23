@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcule facilmente a autonomia estimada de suas baterias de lítio com base na capacidade, quantidade e consumo. Ferramenta prática para sistemas solares, RVs e mais.">
     <title>Calculadora de Autonomia Real - Baterias de Lítio</title>
     <!-- Link para o CSS -->
     <link rel="stylesheet" href="style.css">
@@ -10,58 +11,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Opcional: Ícone Font Awesome (se quiser usar) -->
+    <!-- Opcional: Ícone Font Awesome -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6032091817440859"
-     crossorigin="anonymous"></script>
+         crossorigin="anonymous"></script>
+   
+
 </head>
 <body>
     <div class="calculator-container">
         <header>
-            <!-- Você pode adicionar um ícone aqui se desejar, como antes -->
              <i class="fas fa-battery-three-quarters icon"></i>
             <h1>Cálculo de Autonomia Real</h1>
             <h2>Baterias de Lítio (Considerando 85% Utilizável)</h2>
         </header>
 
+        <!-- === CONTEÚDO ADICIONADO ANTES DA CALCULADORA === -->
+        <section class="content-section">
+            <h3>Entendendo a Autonomia da sua Bateria de Lítio</h3>
+            <p>Saber quanto tempo suas baterias de lítio vão durar com uma carga é crucial para diversos projetos, desde sistemas. Calcular a autonomia ajuda a dimensionar corretamente seu banco de baterias e a evitar ficar sem energia em momentos críticos.</p>
+            <p>Esta ferramenta foi criada para simplificar esse cálculo, fornecendo uma estimativa realista do tempo de funcionamento com base nas especificações do seu sistema.</p>
+            <hr>
+        </section>
+        <!-- === FIM DO CONTEÚDO ADICIONADO === -->
+
         <form id="autonomy-form">
             <div class="input-group">
                 <label for="capacity-per-battery">Capacidade Nominal por Bateria (Ah):</label>
                 <input type="number" id="capacity-per-battery" name="capacity-per-battery" placeholder="Ex: 100" step="any" required>
-                <small>Capacidade total de fábrica de cada bateria.</small>
+                <small>Informe a capacidade total de fábrica (em Ampere-hora) de <strong>cada</strong> bateria individual.</small>
             </div>
 
             <div class="input-group">
                 <label for="num-batteries">Quantidade de Baterias (em paralelo):</label>
                 <input type="number" id="num-batteries" name="num-batteries" placeholder="Ex: 4" step="1" min="1" required>
-                <small>Número de baterias idênticas conectadas.</small>
+                <small>Quantas baterias idênticas estão conectadas em paralelo para aumentar a capacidade total.</small>
             </div>
 
             <div class="input-group">
                 <label for="avg-consumption">Consumo Médio (A):</label>
                 <input type="number" id="avg-consumption" name="avg-consumption" placeholder="Ex: 9.2" step="any" required>
-                <small>Corrente média consumida pelos equipamentos (Amperes).</small>
+                <small>Qual a corrente média (em Amperes) que seus equipamentos consomem continuamente.</small>
             </div>
-
-            <!-- O campo de Eficiência NÃO é mais necessário aqui -->
 
             <button type="submit">Calcular Autonomia Real</button>
         </form>
 
         <div id="result-area" class="result-area" style="display: none;">
-             <!-- O resultado será inserido aqui pelo JavaScript -->
-             <!-- Exemplo:
-                <p><span class="label">Capacidade Total Nominal:</span> 400.0 Ah</p>
-                <p><span class="label">Capacidade Útil (85%):</span> 340.0 Ah</p>
-                <hr>
-                <p><span class="label">Tempo Estimado de Autonomia:</span></p>
-                <p><span class="value">36 horas e 57 minutos</span></p>
-             -->
+            
         </div>
+
+        <!-- === CONTEÚDO ADICIONADO DEPOIS DA CALCULADORA === -->
+        <section class="content-section">
+             <hr>
+            <h3>Como Usar e Interpretar os Resultados</h3>
+            <p>Preencha os três campos acima com os dados do seu sistema. A calculadora fará o resto!</p>
+            <ul>
+                <li><strong>Capacidade Total Nominal:</strong> É a soma da capacidade de fábrica de todas as suas baterias.</li>
+                <li><strong>Capacidade Útil (85%):</strong> Para uma estimativa mais segura e para preservar a vida útil das baterias de lítio, esta calculadora considera que você utilizará apenas 85% da capacidade nominal total. Evitar descargas muito profundas (abaixo de 15-20%) geralmente prolonga a durabilidade das baterias.</li>
+                <li><strong>Tempo Estimado de Autonomia:</strong> Mostra o resultado principal em horas e minutos. Este é o tempo aproximado que seu sistema pode funcionar com o consumo médio informado, utilizando a capacidade útil calculada.</li>
+            </ul>
+            <p><strong>Importante:</strong> Lembre-se que este é um cálculo teórico. A autonomia real pode variar devido a fatores como temperatura, idade da bateria, eficiência dos equipamentos e picos de consumo.</p>
+            <hr>
+             <h3>Dicas para Otimizar a Autonomia</h3>
+             <ul>
+                 <li>Mantenha as baterias em temperaturas amenas sempre que possível.</li>
+                 <li>Evite descargas completas (0%) ou cargas totais (100%) constantes, se seu sistema permitir gerenciamento.</li>
+                 <li>Verifique se há consumos "fantasmas" (equipamentos consumindo energia mesmo desligados).</li>
+                 <li>Utilize equipamentos mais eficientes energeticamente.</li>
+             </ul>
+             <p class="disclaimer">Use esta calculadora facilitando cálculo em seu trabalho.</p>
+<p class="disclaimer">© 2025 Calcule Autonomia</p>
+        </section>
+      
+
     </div>
 
-    <!-- Link para o JavaScript (defer garante que o HTML carregue antes) -->
+   
     <script src="script.js" defer></script>
 </body>
 </html>
