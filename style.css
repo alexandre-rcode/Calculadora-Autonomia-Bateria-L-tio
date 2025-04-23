@@ -16,6 +16,7 @@ body {
     padding: 20px;
     background-image: radial-gradient(circle, #16213e 1px, transparent 1px);
     background-size: 20px 20px; /* Efeito de pontos sutis */
+    line-height: 1.6; /* Melhora legibilidade do texto adicionado */
 }
 
 /* Container Principal */
@@ -25,16 +26,16 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 500px;
+    max-width: 650px; /* Aumentar um pouco a largura máxima para caber o texto */
     border: 1px solid #4a4a6a; /* Borda sutil */
 }
 
 /* Cabeçalho */
 header {
     text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #4a4a6a;
-    padding-bottom: 20px;
+    margin-bottom: 20px; /* Reduzir um pouco a margem inferior */
+    /* border-bottom: 1px solid #4a4a6a; */ /* Remover borda para integrar melhor com texto */
+    padding-bottom: 10px; /* Reduzir padding */
 }
 
 header .icon {
@@ -47,15 +48,62 @@ header h1 {
     color: #ffffff;
     font-weight: 700;
     margin-bottom: 5px;
-    font-size: 1.7em; /* Ajuste leve */
+    font-size: 1.7em;
 }
 
 header h2 {
     color: #b0b0d0; /* Lilás/Cinza claro */
     font-weight: 400;
-    font-size: 1.0em; /* Ajuste leve */
+    font-size: 1.0em;
     margin-top: 5px;
 }
+
+/* --- Estilos para o Conteúdo Adicionado --- */
+.content-section {
+    margin: 25px 0; /* Espaçamento entre seções de texto e formulário/resultado */
+}
+
+.content-section h3 {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #4a4a6a; /* Linha abaixo do título da seção */
+    display: inline-block; /* Para a borda ficar só no tamanho do texto */
+}
+
+.content-section p {
+    margin-bottom: 15px;
+    color: #c0c0e0; /* Cor um pouco mais clara para o texto */
+    font-size: 0.95em;
+}
+
+.content-section ul {
+    margin-bottom: 15px;
+    margin-left: 20px; /* Recuo da lista */
+    color: #c0c0e0;
+    font-size: 0.95em;
+}
+
+.content-section ul li {
+    margin-bottom: 8px; /* Espaçamento entre itens da lista */
+}
+
+.content-section hr {
+     border: 0;
+     height: 1px;
+     background-color: #4a4a6a;
+     margin: 25px 0; /* Espaçamento da linha divisória */
+}
+
+.disclaimer {
+    font-size: 0.85em !important; /* Deixar o disclaimer menor */
+    color: #8080a0 !important;
+    text-align: center;
+    margin-top: 20px;
+}
+/* --- Fim dos Estilos Adicionados --- */
+
 
 /* Grupos de Input */
 .input-group {
@@ -66,7 +114,7 @@ header h2 {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: #c0c0e0; /* Cor mais clara para labels */
+    color: #c0c0e0;
     font-size: 0.95em;
 }
 
@@ -74,27 +122,26 @@ header h2 {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #4a4a6a;
-    background-color: #1e1e3f; /* Fundo do input mais escuro */
+    background-color: #1e1e3f;
     color: #e0e0e0;
     border-radius: 8px;
     font-size: 1em;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Remove setas do input number (Webkit/Mozilla) */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 input[type=number] {
-  -moz-appearance: textfield; /* Firefox */
+  -moz-appearance: textfield;
 }
 
 
 .input-group input[type="number"]:focus {
     outline: none;
-    border-color: #00aaff; /* Azul claro no foco */
+    border-color: #00aaff;
     box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
 }
 
@@ -102,14 +149,14 @@ input[type=number] {
     display: block;
     margin-top: 5px;
     font-size: 0.8em;
-    color: #8080a0; /* Cinza azulado para dica */
+    color: #8080a0;
 }
 
 /* Botão */
 button[type="submit"] {
     width: 100%;
     padding: 15px;
-    background: linear-gradient(90deg, #00aaff, #0077cc); /* Gradiente Azul */
+    background: linear-gradient(90deg, #00aaff, #0077cc);
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -117,30 +164,30 @@ button[type="submit"] {
     font-weight: 700;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.1s ease;
-    margin-top: 10px; /* Espaço antes do botão */
+    margin-top: 10px;
 }
 
 button[type="submit"]:hover {
-    background: linear-gradient(90deg, #0099ee, #0066bb); /* Gradiente mais claro no hover */
+    background: linear-gradient(90deg, #0099ee, #0066bb);
 }
 
 button[type="submit"]:active {
-    transform: scale(0.98); /* Efeito de clique */
+    transform: scale(0.98);
 }
 
 /* Área de Resultado */
 .result-area {
     margin-top: 30px;
     padding: 20px;
-    background-color: #1e1e3f; /* Mesmo fundo dos inputs */
+    background-color: #1e1e3f;
     border-radius: 8px;
     border: 1px solid #4a4a6a;
     text-align: center;
 }
 
 .result-area p {
-    margin: 8px 0; /* Ajuste espaçamento */
-    font-size: 1.05em; /* Tamanho base do texto resultado */
+    margin: 8px 0;
+    font-size: 1.05em;
 }
 
 .result-area .label {
@@ -151,8 +198,8 @@ button[type="submit"]:active {
 .result-area .value {
     font-weight: 700;
     font-size: 1.4em;
-    color: #66ffcc; /* Verde água para o resultado */
-    display: block; /* Para o valor ficar abaixo do label se necessário */
+    color: #66ffcc;
+    display: block;
     margin-top: 5px;
 }
 
@@ -165,21 +212,25 @@ button[type="submit"]:active {
 
 
 .result-area .error {
-    color: #ff6666; /* Vermelho para erros */
+    color: #ff6666;
     font-weight: 500;
     font-size: 1em;
 }
 
 /* Media Query para telas menores */
-@media (max-width: 600px) {
+@media (max-width: 700px) { /* Ajustar breakpoint por causa da largura maior */
     .calculator-container {
         padding: 20px;
+        max-width: 95%; /* Usar mais da tela */
     }
     header h1 {
         font-size: 1.5em;
     }
     header h2 {
         font-size: 0.9em;
+    }
+     .content-section p, .content-section ul {
+        font-size: 0.9em; /* Reduzir um pouco o texto em telas pequenas */
     }
     button[type="submit"] {
         padding: 12px;
