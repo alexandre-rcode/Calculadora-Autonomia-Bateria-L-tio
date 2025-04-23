@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (invalidInput) {
                 invalidInput.focus(); // Foca no campo inválido
             }
+            // Rola a página para a área de resultado/erro ser visível
+            resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
             return;
         }
 
@@ -69,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
             <p><span class="value">${hours} hora${hours !== 1 ? 's' : ''} e ${minutes} minuto${minutes !== 1 ? 's' : ''}</span></p>
         `;
         resultArea.style.display = 'block'; // Mostra a área de resultado
+
+        // Rola a página para a área de resultado ser visível
+        resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
      // Opcional: Adicionar listeners para limpar o resultado se os inputs mudarem
